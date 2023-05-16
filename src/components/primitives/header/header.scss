@@ -1,0 +1,35 @@
+@import "../../../styles/mixins.scss";
+.header {
+  @include layout;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  &_logo {
+    display: flex;
+    position: relative;
+    @include trans;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &__icon {
+      width: 15px;
+      margin-right: 5px;
+      @include pcS {
+        width: rem(25);
+        margin-right: rem(5);
+      }
+    }
+    &__title {
+      font-weight: 700;
+    }
+    &__link {
+      @include block_full;
+    }
+  }
+  &_cart {
+    width: 15px;
+    @include pcS {
+      width: rem(25);
+    }
+  }
+}

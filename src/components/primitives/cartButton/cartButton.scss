@@ -1,0 +1,18 @@
+@import "../../../styles/mixins.scss";
+
+.cart_button {
+  position: relative;
+  @include trans;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &__icon {
+    width: 15px;
+    @include pcS {
+      width: rem(25);
+    }
+  }
+  &__link {
+    @include block_full;
+  }
+}
