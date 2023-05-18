@@ -1,0 +1,27 @@
+@import "../../../styles/mixins.scss";
+
+.cart-item_counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__plus,
+  &__minus {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    font-weight: 700;
+    @include trans;
+    @include pcS {
+      width: rem(35);
+      height: rem(35);
+    }
+    &:hover {
+      background: $grey;
+    }
+  }
+}

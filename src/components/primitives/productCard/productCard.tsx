@@ -1,15 +1,16 @@
 import { AddButton } from "../addButton/addButton";
 import "./productCard.scss";
 
-export interface IproductCard {
+export interface Iproduct {
   id: string;
   title: string;
   description: string;
   price: number;
   currency: string;
+  count: number;
 }
 
-export const ProductCard = (product: IproductCard) => {
+export const ProductCard = (product: Iproduct) => {
   return (
     <div className="product-card">
       <div className="product-card_wrapper">

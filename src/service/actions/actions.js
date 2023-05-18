@@ -5,6 +5,8 @@ const ProductsCollectionRef = collection(db, "products");
 
 export const SET_PRODUCTS = "SET_PRODUCTS";
 export const ADD_PRODUCT = "ADD_PRODUCTS";
+export const CHANGE_COUNT = "CHANGE_COUNT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
 
 export const setProducts = () => ({
   type: SET_PRODUCTS,
@@ -13,11 +15,24 @@ export const setProducts = () => ({
   ),
 });
 
-export const addProduct = (products, productId) => ({
+export const addProduct = (productId) => ({
   type: ADD_PRODUCT,
-  peyload: { products: products, productId: productId },
+  payload: { productId: productId },
+});
+
+export const changeCount = (productId, count) => ({
+  type: CHANGE_COUNT,
+  payload: { productId: productId, count: count },
+});
+
+export const deleteProduct = (productId) => ({
+  type: DELETE_PRODUCT,
+  payload: { productId: productId },
 });
 
 export const actions = {
   setProducts,
+  addProduct,
+  changeCount,
+  deleteProduct,
 };

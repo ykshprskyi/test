@@ -1,0 +1,23 @@
+@import "../../../styles/mixins.scss";
+
+.cart {
+  @include layout;
+  &__items-form_wrapper {
+    display: flex;
+    flex-direction: column;
+    @include pcS {
+      flex-direction: row;
+    }
+  }
+  &_items {
+    @include pcS {
+      max-width: 60%;
+    }
+  }
+  &_total {
+    font-size: 18px;
+    @include pcS {
+      font-size: rem(26);
+    }
+  }
+}

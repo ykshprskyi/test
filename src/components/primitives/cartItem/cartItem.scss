@@ -1,0 +1,47 @@
+@import "../../../styles/mixins.scss";
+
+.cart-item {
+  margin-bottom: 5px;
+  @include pcS {
+    margin-bottom: rem(10);
+  }
+  &_wrapper {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @include pcS {
+      border-radius: rem(5);
+      padding: rem(15);
+      grid-template-columns: 1fr 1fr 1fr rem(120);
+    }
+  }
+  &__price {
+    display: flex;
+    justify-content: center;
+    &__price {
+      font-size: 18px;
+      @include pcS {
+        font-size: rem(22);
+      }
+      margin-right: 5px;
+      @include pcS {
+        margin-right: rem(5);
+      }
+    }
+    &__currency {
+      font-size: 18px;
+      @include pcS {
+        font-size: rem(22);
+      }
+    }
+  }
+  &__val {
+    text-align: center;
+    font-size: 18px;
+    @include pcS {
+      font-size: rem(22);
+    }
+  }
+}
