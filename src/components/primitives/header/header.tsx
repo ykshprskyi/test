@@ -1,6 +1,7 @@
 import React from "react";
+//@ts-ignore
 import { ReactComponent as Logo } from "../../../assets/images/logo.svg";
-import { CartButton } from "../cartButton/cartButton.tsx";
+import { CartButton } from "../cartButton/cartButton";
 import { Link } from "react-router-dom";
 import "./header.scss";
 

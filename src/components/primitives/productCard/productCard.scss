@@ -1,0 +1,28 @@
+@import "../../../styles/mixins.scss";
+
+.product-card {
+  width: 50%;
+  padding: 10px;
+  @include pcS {
+    width: 33.333%;
+    padding: rem(15);
+  }
+  &__item {
+    margin-bottom: 10px;
+    @include pcS {
+      margin-bottom: rem(10);
+    }
+  }
+  &_wrapper {
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include pcS {
+      padding: rem(25);
+    }
+  }
+}

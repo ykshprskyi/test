@@ -1,0 +1,9 @@
+@import "../../../styles/mixins.scss";
+
+.products {
+  @include layout;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

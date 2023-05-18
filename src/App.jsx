@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Products } from "./components/pages/products/products.tsx";
+import Products from "./components/pages/products/products.tsx";
 import { Layout } from "./components/pages/layout/Layout";
 import { Cart } from "./components/pages/cart/cart.tsx";
 import { ErrorPage } from "./components/pages/errorPage/errorPage";

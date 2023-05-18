@@ -1,4 +1,5 @@
 import React from "react";
+//@ts-ignore
 import { ReactComponent as CartIcon } from "../../../assets/images/cart.svg";
 import { Link } from "react-router-dom";
 import "./cartButton.scss";
