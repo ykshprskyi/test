@@ -37,7 +37,7 @@ const reducer = (state = initialState, action: any) => {
       }
 
     case CHANGE_COUNT:
-      const productToChangeIndex = state.products.findIndex(
+      const productToChangeIndex = state.cart.findIndex(
         (product) => product.id === action.payload.productId
       );
       const newCart = [...state.cart];
@@ -59,4 +59,4 @@ const reducer = (state = initialState, action: any) => {
 };
 
 export default reducer;
-export type Reducer = { products: Array<any>; cart: Array<any> };
+export type Reducer = { products: Array<any>; cart: Array<any>; user: any };

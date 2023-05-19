@@ -2,7 +2,7 @@
 
 .cart {
   @include layout;
-  &__items-form_wrapper {
+  &_items_form_wrapper {
     display: flex;
     flex-direction: column;
     @include pcS {
@@ -11,13 +11,19 @@
   }
   &_items {
     @include pcS {
-      max-width: 60%;
+      width: 60%;
     }
   }
   &_total {
     font-size: 18px;
     @include pcS {
       font-size: rem(26);
+    }
+  }
+  &_form {
+    width: 40%;
+    @include pcS {
+      margin-left: rem(40);
     }
   }
 }

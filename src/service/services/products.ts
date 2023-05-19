@@ -12,6 +12,7 @@ export const getProducts = (): MyThunkAction => async (dispatch: any) => {
   // dispatch(setLoading(true));
   const products = await API.getProducts();
   dispatch({ type: SET_PRODUCTS, payload: { products } });
+  //if namefilter
   // dispatch(setLoading(false));
   return products;
 };

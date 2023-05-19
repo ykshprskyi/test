@@ -9,12 +9,10 @@ interface CounterProps {
 export const Counter = ({ id, count }: CounterProps) => {
   const dispatch: any = useDispatch();
   const IncHandler = (e) => {
-    e.stopPropagation();
     let newcount: number = ++count;
     dispatch(actions.changeCount(id, newcount));
   };
   const DecHandler = (e) => {
-    e.stopPropagation();
     let newcount: number = --count;
     if (newcount === 0) {
       dispatch(actions.deleteProduct(id));

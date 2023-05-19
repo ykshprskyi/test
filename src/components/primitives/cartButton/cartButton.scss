@@ -15,4 +15,21 @@
   &__link {
     @include block_full;
   }
+  &__count {
+    position: absolute;
+    right: -5px;
+    top: -7px;
+    color: $white;
+    background: $green;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    @include pcS {
+      right: rem(-18);
+      top: rem(-13);
+      width: rem(25);
+      height: rem(25);
+    }
+  }
 }

@@ -21,6 +21,7 @@ export const AddButton = ({ id }: AddButtonProps) => {
     e.stopPropagation();
     if (!Added) {
       dispatch(actions.addProduct(id));
+      //update localstorage
     } else {
       dispatch(actions.deleteProduct(id));
     }
