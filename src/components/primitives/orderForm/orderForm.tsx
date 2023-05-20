@@ -4,6 +4,8 @@ import * as yup from "yup";
 import { addOrder } from "../../../service/services/cart";
 import { useDispatch, useSelector } from "react-redux";
 import "./orderForm.scss";
+import { actions } from "../../../service/actions/actions";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
 interface OrderFormData {
   name: string;
@@ -32,12 +34,16 @@ const OrderForm: React.FC = () => {
   } = useForm<OrderFormData>();
 
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
+  const navigate: NavigateFunction = useNavigate();
 
   const onSubmit = (data: OrderFormData) => {
     if (!LoggedUser) {
       dispatch(addOrder(data));
     }
     dispatch(addOrder(data));
+    alert("Order succesfully created");
+    navigate("/");
+    dispatch(actions.clearCart());
   };
 
   const handleFormValidation = async (data: OrderFormData) => {

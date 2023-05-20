@@ -5,7 +5,6 @@ import { Cart } from "./components/pages/cart/cart.tsx";
 import { ErrorPage } from "./components/pages/errorPage/errorPage";
 import { useDispatch } from "react-redux";
 import "./styles/main.scss";
-import { useEffect } from "react";
 import { actions } from "./service/actions/actions.js";
 
 const router = createBrowserRouter([
@@ -13,7 +12,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/products",
+        path: "/",
         element: <Products />,
       },
       {

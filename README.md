@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# Test Shop for Lampa Software
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Small shop on React.js, Redux, Firebase
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To install and run Shop locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository: `https://github.com/ykshprskyi/test.git`
+2. Navigate to the project directory: `cd test-master`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once the application is running, you can access it in your web browser at `http://localhost:3000`. Here are some key features and functionalities of Test Shop:
 
-### `npm run build`
+- Google Authorization;
+- Adding product to cart
+- Changing quantity for products in cart
+- Filter products in /products
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- User-friendly interface
+- Partially adaptive design for mobile and full responsive for desktop devices
+- Real-time updates and synchronization across devices
+- Data persistence using Firebase Firestore
+- Authentication and user management using Firebase Authentication
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+Contributions are welcome! If you'd like to contribute to Test Shop, please follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/my-feature`
+3. Make your changes and commit them: `git commit -m "Add new feature"`
+4. Push the changes to your branch: `git push origin feature/my-feature`
+5. Submit a pull request
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Please ensure that your code follows the project's coding conventions and includes appropriate tests.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-## Learn More
+## Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Certainly! Here's a practical example of a README.md file for a fictional project called "Awesome App":
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+markdown
+Copy code
 
-### Code Splitting
+# Awesome App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Welcome to Awesome App! This is a web application that allows users to manage their tasks and stay organized.
 
-### Analyzing the Bundle Size
+## Table of Contents
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### Making a Progressive Web App
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To install and run Awesome App locally, follow these steps:
 
-### Advanced Configuration
+1. Clone the repository: `git clone https://github.com/your-username/awesome-app.git`
+2. Navigate to the project directory: `cd awesome-app`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Usage
 
-### Deployment
+Once the application is running, you can access it in your web browser at `http://localhost:3000`. Here are some key features and functionalities of Awesome App:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Create, edit, and delete tasks
+- Mark tasks as completed
+- Filter tasks by category or due date
+- Set reminders and receive notifications
+- Collaborate with team members by sharing tasks
 
-### `npm run build` fails to minify
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- User-friendly interface
+- Responsive design for mobile and desktop devices
+- Real-time updates and synchronization across devices
+- Data persistence using Firebase Firestore
+- Authentication and user management using Firebase Authentication
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to Awesome App, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/my-feature`
+3. Make your changes and commit them: `git commit -m "Add new feature"`
+4. Push the changes to your branch: `git push origin feature/my-feature`
+5. Submit a pull request
+
+Please ensure that your code follows the project's coding conventions and includes appropriate tests.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Contact
+
+If you have any questions or feedback regarding Awesome App, feel free to reach out:
+
+- Email: ykshprsky@gmai.com
+- Telegram: @ykshprsky
+
+I appreciate your interest and support!

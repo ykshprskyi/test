@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
             <Logo />
           </div>
           <div className="header_logo__title">Grocery store</div>
-          <Link className="header_logo__link" to={"/products"} />
+          <Link className="header_logo__link" to={"/"} />
         </div>
       </div>
       <div className="header_right">

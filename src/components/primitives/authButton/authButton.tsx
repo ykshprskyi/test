@@ -13,13 +13,11 @@ export const AuthButton = () => {
   const signInWithEmail = () => {
     signInWithPopup(auth, myGoogleAuthProvider)
       .then((result) => {
-        // Успішний вхід в систему
         const LoggedUser = result.user;
         setUser(LoggedUser);
         dispatch(actions.setUser(LoggedUser));
       })
       .catch((error) => {
-        // Помилка аутентифікації
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log("Authentication error:", errorCode, errorMessage);

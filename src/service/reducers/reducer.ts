@@ -6,6 +6,7 @@ import {
   SET_CART,
   SET_USER,
   FILTER_PRODUCTS,
+  CLEAR_CART,
 } from "../actions/actions";
 
 export const initialState = {
@@ -18,6 +19,12 @@ const reducer = (state = initialState, action: any) => {
       return {
         ...state,
         products: action.payload.products,
+      };
+    case CLEAR_CART:
+      sessionStorage.setItem("cart", JSON.stringify([]));
+      return {
+        ...state,
+        cart: [],
       };
     case SET_CART:
       let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
