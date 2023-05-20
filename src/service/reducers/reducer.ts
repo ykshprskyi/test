@@ -30,6 +30,8 @@ const reducer = (state = initialState, action: any) => {
           ...productToAdd,
           count: 1,
         };
+        let cart = [...state.cart, updatedProductToAdd];
+        sessionStorage.setItem("cart", JSON.stringify(cart));
         return {
           ...state,
           cart: [...state.cart, updatedProductToAdd],

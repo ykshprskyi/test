@@ -7,6 +7,7 @@ export const SET_PRODUCTS = "SET_PRODUCTS";
 export const ADD_PRODUCT = "ADD_PRODUCTS";
 export const CHANGE_COUNT = "CHANGE_COUNT";
 export const DELETE_PRODUCT = "DELETE_PRODUCT";
+export const SET_CART = "SET_CART";
 
 export const setProducts = () => ({
   type: SET_PRODUCTS,
@@ -18,6 +19,10 @@ export const setProducts = () => ({
 export const addProduct = (productId) => ({
   type: ADD_PRODUCT,
   payload: { productId: productId },
+});
+export const setCart = (cart) => ({
+  type: SET_CART,
+  payload: { cart: cart },
 });
 
 export const changeCount = (productId, count) => ({
@@ -35,4 +40,5 @@ export const actions = {
   addProduct,
   changeCount,
   deleteProduct,
+  setCart,
 };

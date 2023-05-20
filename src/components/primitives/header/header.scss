@@ -27,9 +27,13 @@
     }
   }
   &_cart {
-    width: 15px;
+    margin-left: 20px;
     @include pcS {
-      width: rem(25);
+      margin-left: rem(25);
     }
+  }
+  &_right {
+    display: flex;
+    align-items: center;
   }
 }

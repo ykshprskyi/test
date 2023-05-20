@@ -1,0 +1,23 @@
+@import "../../../styles/mixins.scss";
+
+.auth-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &_icon {
+    width: 15px;
+    @include trans;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @include pcS {
+      width: rem(25);
+    }
+  }
+  &_username {
+    margin-left: 5px;
+    @include pcS {
+      margin-left: rem(10);
+    }
+  }
+}
