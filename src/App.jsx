@@ -3,7 +3,10 @@ import Products from "./components/pages/products/products.tsx";
 import { Layout } from "./components/pages/layout/Layout";
 import { Cart } from "./components/pages/cart/cart.tsx";
 import { ErrorPage } from "./components/pages/errorPage/errorPage";
+import { useDispatch } from "react-redux";
 import "./styles/main.scss";
+import { useEffect } from "react";
+import { actions } from "./service/actions/actions.js";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,8 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
+  const dispatch = useDispatch();
+  dispatch(actions.setCart());
   return <RouterProvider router={router} />;
 }
 

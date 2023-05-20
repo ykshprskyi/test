@@ -24,7 +24,7 @@ const schema = yup.object().shape({
 
 const OrderForm: React.FC = () => {
   const dispatch: any = useDispatch();
-
+  const LoggedUser = useSelector((state: any) => state.user);
   const {
     register,
     handleSubmit,
@@ -34,13 +34,17 @@ const OrderForm: React.FC = () => {
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
 
   const onSubmit = (data: OrderFormData) => {
+    if (!LoggedUser) {
+      dispatch(addOrder(data));
+    }
     dispatch(addOrder(data));
   };
 
   const handleFormValidation = async (data: OrderFormData) => {
     try {
-      //if(!user)
-      await schema.validate(data, { abortEarly: false });
+      if (!LoggedUser) {
+        await schema.validate(data, { abortEarly: false });
+      }
       onSubmit(data);
     } catch (validationErrors) {
       const formattedErrors = validationErrors?.inner?.reduce(
@@ -56,35 +60,40 @@ const OrderForm: React.FC = () => {
 
   return (
     <form className="order-form" onSubmit={handleSubmit(handleFormValidation)}>
-      {/* //if(!user) */}
-      <div className="order-form_name order-form_item">
-        <label htmlFor="name">Name:</label>
-        <input {...register("name")} />
-        {formErrors.name && (
-          <span className="error-message">{formErrors.name}</span>
-        )}
-      </div>
-      <div className="order-form_email order-form_item">
-        <label htmlFor="email">E-mail:</label>
-        <input {...register("email")} />
-        {formErrors.email && (
-          <span className="error-message">{formErrors.email}</span>
-        )}
-      </div>
-      <div className="order-form_adress order-form_item">
-        <label htmlFor="address">Address:</label>
-        <input {...register("address")} />
-        {formErrors.address && (
-          <span className="error-message">{formErrors.address}</span>
-        )}
-      </div>
-      <div className="order-form_phone order-form_item">
-        <label htmlFor="phone">Phone:</label>
-        <input {...register("phone")} />
-        {formErrors.phone && (
-          <span className="error-message">{formErrors.phone}</span>
-        )}
-      </div>
+      {!LoggedUser ? (
+        <div className="order-form_wrapper">
+          <div className="order-form_name order-form_item">
+            <label htmlFor="name">Name:</label>
+            <input id="name" {...register("name")} />
+            {formErrors.name && (
+              <span className="error-message">{formErrors.name}</span>
+            )}
+          </div>
+          <div className="order-form_email order-form_item">
+            <label htmlFor="email">E-mail:</label>
+            <input id="email" {...register("email")} />
+            {formErrors.email && (
+              <span className="error-message">{formErrors.email}</span>
+            )}
+          </div>
+          <div className="order-form_adress order-form_item">
+            <label htmlFor="address">Address:</label>
+            <input id="address" {...register("address")} />
+            {formErrors.address && (
+              <span className="error-message">{formErrors.address}</span>
+            )}
+          </div>
+          <div className="order-form_phone order-form_item">
+            <label htmlFor="phone">Phone:</label>
+            <input id="phone" {...register("phone")} />
+            {formErrors.phone && (
+              <span className="error-message">{formErrors.phone}</span>
+            )}
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
       <button className="order-form_submit order-form_item" type="submit">
         Make an order
       </button>

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Iproduct } from "../../primitives/productCard/productCard";
 import { CartItem } from "../../primitives/cartItem/cartItem";
 import OrderForm from "../../primitives/orderForm/orderForm";
+
 import "./cart.scss";
 
 export const Cart = () => {

@@ -5,15 +5,15 @@ const ProductsCollectionRef = collection(db, "products");
 
 export const SET_PRODUCTS = "SET_PRODUCTS";
 export const ADD_PRODUCT = "ADD_PRODUCTS";
-export const CHANGE_COUNT = "CHANGE_COUNT";
 export const DELETE_PRODUCT = "DELETE_PRODUCT";
+export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
+export const CHANGE_COUNT = "CHANGE_COUNT";
 export const SET_CART = "SET_CART";
+export const SET_USER = "SET_USER";
 
-export const setProducts = () => ({
-  type: SET_PRODUCTS,
-  payload: getDocs(ProductsCollectionRef).then((data) =>
-    data.docs.map((el) => ({ ...el.data(), id: el.id }))
-  ),
+export const setUser = (user) => ({
+  type: SET_USER,
+  payload: { user: user },
 });
 
 export const addProduct = (productId) => ({
@@ -36,9 +36,9 @@ export const deleteProduct = (productId) => ({
 });
 
 export const actions = {
-  setProducts,
   addProduct,
   changeCount,
   deleteProduct,
   setCart,
+  setUser,
 };

@@ -1,5 +1,5 @@
 import { db } from "../firebase";
-import { getDocs, collection, addDoc } from "firebase/firestore";
+import { getDocs, collection, addDoc, query, where } from "firebase/firestore";
 
 const ProductsCollectionRef = collection(db, "products");
 const OrdersCollectionRef = collection(db, "orders");
@@ -22,4 +22,17 @@ export function addGuest(user) {
   return addDoc(GuestsCollectionRef, {
     user,
   });
+}
+
+export function filterProducts(nameFilter) {
+  const q = query(ProductsCollectionRef, where("title", "==", nameFilter));
+  if (nameFilter == "") {
+    return getDocs(ProductsCollectionRef).then((data) =>
+      data.docs.map((el) => ({ ...el.data(), id: el.id }))
+    );
+  } else {
+    return getDocs(q).then((data) =>
+      data.docs.map((el) => ({ ...el.data(), id: el.id }))
+    );
+  }
 }

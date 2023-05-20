@@ -4,8 +4,10 @@ import { getAuth, signInWithPopup } from "firebase/auth";
 import "./authButton.scss";
 import { app, myGoogleAuthProvider } from "../../../firebase";
 import { useEffect, useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { actions } from "../../../service/actions/actions";
 export const AuthButton = () => {
+  const dispatch = useDispatch();
   const auth = getAuth(app);
   const [user, setUser] = useState(null);
   const signInWithEmail = () => {
@@ -14,6 +16,7 @@ export const AuthButton = () => {
         // Успішний вхід в систему
         const LoggedUser = result.user;
         setUser(LoggedUser);
+        dispatch(actions.setUser(LoggedUser));
       })
       .catch((error) => {
         // Помилка аутентифікації
@@ -25,6 +28,8 @@ export const AuthButton = () => {
   useEffect(() => {
     const unsub = auth.onAuthStateChanged((maybeUser) => {
       if (maybeUser !== null) {
+        dispatch(actions.setUser(maybeUser));
+
         return setUser(maybeUser);
       }
     });

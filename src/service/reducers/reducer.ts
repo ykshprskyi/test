@@ -3,6 +3,9 @@ import {
   CHANGE_COUNT,
   DELETE_PRODUCT,
   SET_PRODUCTS,
+  SET_CART,
+  SET_USER,
+  FILTER_PRODUCTS,
 } from "../actions/actions";
 
 export const initialState = {
@@ -12,6 +15,17 @@ export const initialState = {
 const reducer = (state = initialState, action: any) => {
   switch (action.type) {
     case SET_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload.products,
+      };
+    case SET_CART:
+      let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+      return {
+        ...state,
+        cart: cart,
+      };
+    case FILTER_PRODUCTS:
       return {
         ...state,
         products: action.payload.products,
@@ -44,16 +58,25 @@ const reducer = (state = initialState, action: any) => {
       );
       const newCart = [...state.cart];
       newCart[productToChangeIndex].count = action.payload.count;
+      sessionStorage.setItem("cart", JSON.stringify(newCart));
       return {
         ...state,
         cart: [...newCart],
       };
 
     case DELETE_PRODUCT:
+      sessionStorage.setItem(
+        "cart",
+        JSON.stringify(
+          state.cart.filter((el) => el.id !== action.payload.productId)
+        )
+      );
       return {
         ...state,
         cart: state.cart.filter((el) => el.id !== action.payload.productId),
       };
+    case SET_USER:
+      return { ...state, user: action.payload.user };
 
     default:
       return state;

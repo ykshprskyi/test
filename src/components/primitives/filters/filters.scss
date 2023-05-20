@@ -1,0 +1,22 @@
+@import "../../../styles/mixins.scss";
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &_input {
+    margin-right: 5px;
+    @include pcS {
+      margin-right: rem(10);
+    }
+  }
+  &_btn {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5px;
+    @include trans;
+    &:hover {
+      background: $white;
+    }
+  }
+}
