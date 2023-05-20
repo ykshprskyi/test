@@ -119,7 +119,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 If you have any questions or feedback regarding Awesome App, feel free to reach out:
 
-- Email: ykshprsky@gmai.com
+- Email: ykshprsky@gmail.com
 - Telegram: @ykshprsky
 
 I appreciate your interest and support!
