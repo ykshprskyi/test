@@ -1,4 +1,4 @@
-# Test Shop for Lampa Software
+# Test Shop
 
 A Small shop on React.js, Redux, Firebase
 
